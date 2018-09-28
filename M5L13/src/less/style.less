@@ -18,7 +18,8 @@ body{
 .form{
   @border-color: #cfdede;
   @main-color: #01b3b3;
-  @text-color: #FFFFFF;
+  @text-color-light: #FFFFFF;
+  @text-color-dark: #333333;
 
   background-color: #FFFFFF;
   margin: 99px auto 0;
@@ -38,7 +39,7 @@ body{
       top: -4px;
       line-height: 26px;
       letter-spacing: -0.01em;
-      color: @text-color;
+      color: @text-color-light;
       background-color: @main-color;
       font-size: 12px;
       font-weight: bold;
@@ -50,14 +51,18 @@ body{
   .control-group{
     height: 75px;
     padding: 0px 28px;
-  
+    letter-spacing: -0.01em;
     label{
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 11px;
       font-weight: 900;
-      font-size: 12px;
+      font-size: 11px;
+      color: @text-color-dark;
       .asterix{
         color: #01b3b3;
+        &::before{
+          content: " ";
+        }
       }
     }
 
@@ -67,20 +72,32 @@ body{
       padding-left: 12px;
       background-image: url("../img/bg.png");
       border: 1px solid @border-color;
+      letter-spacing: 0em;
       &::placeholder{
         font-style: italic;
+        color:#777777;
       }
     }
 
     .reg-btn{
+      @grad-clr-dark:#0aa1a1;
+      @grad-clr-light:#06bfbf;
       display: inline-block;
-      text-transform: uppercase;
+      margin-top: 18px;
       width: 260px;
       height: 45px;
-      background-image: linear-gradient(#06bfbf, #0aa1a1);
-      border: none;
-      color: @text-color;
+      text-transform: uppercase;
+      background-image: linear-gradient(rgba(255,255,255,0.24),rgba(0,0,0,0.24) ) , linear-gradient( @grad-clr-dark, @grad-clr-light);
+      border: 1px solid @grad-clr-dark;
+      color: @text-color-light;
       font-weight: 900;
+      font-size: 15px;
+      text-shadow: 0px 1px 50px rgba(0, 0, 0, 0.1); 
+      border-radius: 2px;
+      
     }
   }
 }
+
+
+// linear-gradient(@grad-clr-light, @grad-clr-dark), 
