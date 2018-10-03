@@ -1,5 +1,5 @@
 // Fonts
-@import "font";
+@import "_font";
 
 .F-Bold() {
   font-family: "Proxima Nova bold", sans-serif;
@@ -19,7 +19,9 @@
 @bg-clr-light: #fcfcfc;
 @text-clr-ligth: #ffffff;
 @text-clr-dark: #292929;
-
+@brd-clr-gray: #dddddd;
+@label-clr:#565656;
+@form-bg-clr: #ffffff;
 // COMMON SETTINGS
 html {
   font-size: 10px;
@@ -63,12 +65,14 @@ body {
   }
 
   .wrap {
+    width: 100%;
     display: table;
     height: @hdr-height;
 
     &-block {
       display: table-cell;
       vertical-align: middle;
+      text-align: right;
     }
   }
 
@@ -81,6 +85,10 @@ body {
 
 // MAIN
 .main {
+  padding-top: 1.5rem;
+  padding-bottom: 10rem;
+  background: #ffffff url("../img/main-background.jpg") center center no-repeat;
+  background-size: cover;
   &-content {}
 
   // Основной заголовок
@@ -127,15 +135,54 @@ body {
 
 
   &-form{
-
     padding: 5rem 4.5rem;
-    border: 1px solid red;
-    background-color: @text-clr-ligth;
+    background-color: @form-bg-clr;
+    text-align: center;
 
     h2{
       margin-bottom: 4rem;
       font-size: 1.8rem;
+      strong{
+        .F-Bold();
+        font-size: 1.9rem;
+      }
+    }
+
+    input{
+      display: block;
+      height: 5rem;
+      width: 100%;
+      margin-bottom: 2.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid @brd-clr-gray;
+    }
+    label{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      padding: 0 1rem;
+      font-size: 1.3rem;
+      color: @label-clr;
+      background-color: @form-bg-clr;
+    }
+    .button{
+      width: 100%;
+      font-size: 1.6rem;
+      height: 6.5rem;
+    }
+    small{
+      display: inline-block;
+      margin-top: 1.5rem;
       text-align: center;
+      font-size: 1.2rem;
+    }
+    &-note{
+      display: inline-block;
+      margin-top: 3.5rem;
+      margin-left: 3rem;
+
+      font-size: 1.2rem;
+      text-align-last: left;
     }
   }
 }

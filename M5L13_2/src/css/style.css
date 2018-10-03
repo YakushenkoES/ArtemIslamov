@@ -47,16 +47,24 @@ body {
   color: #292929;
 }
 .header .wrap {
+  width: 100%;
   display: table;
   height: 7rem;
 }
 .header .wrap-block {
   display: table-cell;
   vertical-align: middle;
+  text-align: right;
 }
 .header .btn-header {
   height: 5rem;
   padding: 0 3rem;
+}
+.main {
+  padding-top: 1.5rem;
+  padding-bottom: 10rem;
+  background: #ffffff url("../img/main-background.jpg") center center no-repeat;
+  background-size: cover;
 }
 .main-title h1 {
   font-family: "Proxima Nova bold", sans-serif;
@@ -92,11 +100,53 @@ body {
 }
 .main-form {
   padding: 5rem 4.5rem;
-  border: 1px solid red;
   background-color: #ffffff;
+  text-align: center;
 }
 .main-form h2 {
   margin-bottom: 4rem;
   font-size: 1.8rem;
-  text-align: center;
 }
+.main-form h2 strong {
+  font-family: "Proxima Nova bold", sans-serif;
+  font-size: 1.9rem;
+}
+.main-form input {
+  display: block;
+  height: 5rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dddddd;
+}
+.main-form label {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  color: #565656;
+  background-color: #ffffff;
+}
+.main-form .button {
+  width: 100%;
+  font-size: 1.6rem;
+  height: 6.5rem;
+}
+.main-form small {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.main-form-note {
+  display: inline-block;
+  margin-top: 3.5rem;
+  margin-left: 3rem;
+  font-size: 1.2rem;
+  text-align-last: left;
+}
+
+/*# sourceMappingURL=style.css.map */
