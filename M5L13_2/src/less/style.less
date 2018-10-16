@@ -1,11 +1,11 @@
 // Fonts
 @import "_font";
 
-.F-Bold() {
+.bold() {
   font-family: "Proxima Nova bold", sans-serif;
 }
 
-.F-Reg() {
+.reg() {
   font-family: "Proxima Nova regular", sans-serif;
 }
 
@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  .F-Reg();
+  .reg();
 }
 
 .button {
@@ -55,7 +55,7 @@ body {
 
   .phone-link {
     display: inline-block;
-    .F-Bold();
+    .bold();
 
     font-size: 2rem;
     line-height: @hdr-height;
@@ -89,12 +89,12 @@ body {
   padding-bottom: 10rem;
   background: #ffffff url("../img/main-background.jpg") center center no-repeat;
   background-size: cover;
-  &-content {}
+  
 
   // Основной заголовок
   &-title {
     h1 {
-      .F-Bold();
+      .bold();
       margin-bottom: 5rem;
       font-size: 4rem;
       text-transform: uppercase;
@@ -122,13 +122,13 @@ body {
     color: @bg-clr-light;
 
     strong{
-      .F-Bold();
+      .bold();
       font-size: 3rem;
     }
   }
   &-trigger{
     display: block;
-    .F-Bold();
+    .bold();
     font-size: 2.2rem;
     text-transform: uppercase;
   }
@@ -143,7 +143,7 @@ body {
       margin-bottom: 4rem;
       font-size: 1.8rem;
       strong{
-        .F-Bold();
+        .bold();
         font-size: 1.9rem;
       }
     }
