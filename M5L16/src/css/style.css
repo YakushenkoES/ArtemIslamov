@@ -12,6 +12,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Open sans light';
+  src: url('../fonts/OpenSans-Light.eot');
+  src: url('../fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Light.woff2') format('woff2'), url('../fonts/OpenSans-Light.woff') format('woff'), url('../fonts/OpenSans-Light.ttf') format('truetype'), url('../fonts/OpenSans-Light.svg#svgFontName') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
 html {
   font-size: 10px;
 }
@@ -32,6 +39,16 @@ body {
   color: #ffffff;
   font-size: 1.2rem;
   text-transform: uppercase;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.button:hover {
+  color: #f2f2f2;
+  background: -webkit-gradient(linear, left bottom, left top, from(#dc9b00), to(#eaa500));
+  background: -webkit-linear-gradient(bottom, #dc9b00 0%, #eaa500 100%);
+  background: -o-linear-gradient(bottom, #dc9b00 0%, #eaa500 100%);
+  background: linear-gradient(0deg, #dc9b00 0%, #eaa500 100%);
 }
 .header {
   margin-top: 1rem;
@@ -147,6 +164,19 @@ body {
   margin-left: 3rem;
   font-size: 1.2rem;
   text-align-last: left;
+}
+@media (max-width: 767.98px) {
+  .header {
+    height: auto;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .header .wrap-block {
+    text-align: center;
+  }
+  .main-title {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

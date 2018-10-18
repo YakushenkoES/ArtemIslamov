@@ -44,6 +44,12 @@ body {
 
   font-size: 1.2rem;
   text-transform: uppercase;
+  transition: all 0.2s;
+  &:hover{
+    color: darken(@text-clr-ligth, 5%);
+    background: linear-gradient(0deg, darken(@btn-grad-clr1, 5%) 0%, darken(@btn-grad-clr2, 5%) 100%);
+ 
+  }
 }
 
 // HEADER
@@ -186,3 +192,22 @@ body {
     }
   }
 }
+
+@media (max-width: 767.98px)
+ {
+   .header{
+     height: auto;
+     margin-bottom: 3rem;
+     text-align: center;
+
+     .wrap {
+        &-block {
+          text-align: center;
+        }
+      }
+   }
+   .main-title{
+     text-align: center;
+   }
+  }
+
