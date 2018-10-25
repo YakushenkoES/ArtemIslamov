@@ -8,7 +8,7 @@ $(".slick").slick(
     centerMode: true,
     centerPadding: '40px',
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     variableWidth: true
   }
 );
