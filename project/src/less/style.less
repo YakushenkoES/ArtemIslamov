@@ -22,7 +22,7 @@
 @brd-clr-gray: #dddddd;
 @label-clr: #565656;
 @form-bg-clr: #ffffff;
-
+@a-clr: #4aa223;
 // COMMON SETTINGS
 html {
   font-size: 10px;
@@ -31,13 +31,19 @@ html {
 body {
   .reg();
 }
+input{
+  outline: none;
+}
+a:hover{
+  text-decoration: none;
+}
 
 .button {
   border-style: solid;
   border-width: 1px;
   border-radius: 0.8rem;
   border-color: @btn-border-clr;
-
+  cursor: pointer;
   background: linear-gradient(0deg, @btn-grad-clr1 0%, @btn-grad-clr2 100%);
   box-shadow: 4px 7px 13px 0px rgba(0, 0, 0, 0.04);
 
@@ -51,6 +57,65 @@ body {
     color: darken(@text-clr-ligth, 5%);
     background: linear-gradient(0deg, darken(@btn-grad-clr1, 5%) 0%, darken(@btn-grad-clr2, 5%) 100%);
 
+  }
+}
+
+// SECTION
+section{
+  text-align: center;
+  padding-top: 10rem;
+}
+.section-header{
+  font-size: 3.6rem;
+  .bold();
+}
+
+// Features
+
+.feature{
+  padding-right: 1rem;
+  padding-left: 1rem;
+  h3{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    .bold();
+  }
+  p{
+    font-size: 1.6rem;
+  }
+  a{
+    color: @a-clr;
+  }
+  &-container{
+    margin-top: 13rem;
+  }
+  &-img-box {
+    margin-bottom: 6rem;
+    img{
+      margin: 0 auto;
+      height: 9rem;
+    }
+  }
+}
+
+//Slider
+.slick-slide{
+  outline: none;
+}
+section .slick-btn{
+  display: block;
+  &::before{
+    content: "";
+  }
+  height: 100%;
+  
+  &.slick-prev{
+    background: url('../img/slider/prev.svg') center no-repeat;
+    background-size: 80%;
+  }
+  &.slick-next{
+    background: url('../img/slider/next.svg') center no-repeat;
+    background-size: 80%;
   }
 }
 
