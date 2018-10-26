@@ -1,0 +1,51 @@
+// Features section
+
+section.features {
+
+  .feature-slider {
+      margin-top: 5.6rem;
+    }
+
+  // Feature 
+  .feature {
+
+    // Feature block
+    &-block {
+      padding-right: 1rem;
+      padding-left: 1rem;
+      text-align: center;
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        .bold();
+      }
+
+      p {
+        font-size: 1.6rem;
+        display: inline-block;
+        width: 80%;
+      }
+
+      a {
+        color: @a-clr;
+      }
+    }
+
+   // Feature image
+    &-img-box {
+      margin-bottom: 6rem;
+
+      img {
+        margin: 0 auto;
+        height: 9rem;
+      }
+    }
+  }
+}
+@media (max-width: 991.98px){
+  .feature-slider {
+    width: calc(100% - 3rem);
+    left: 1.5rem;
+  }
+}
