@@ -48,3 +48,18 @@
 body.popup-opened{
   overflow: hidden;
 }
+
+@media (max-width: 991.98px) {
+  @dlg-width: 35rem;
+  .popup{
+    &-window{
+      position: fixed;
+      width: calc(100% - 10rem);
+      max-width: @dlg-width;
+      top: 20rem;
+      left: 50%;
+      top:2rem;
+      transform: translateX(-50%);
+    }
+  }
+}
