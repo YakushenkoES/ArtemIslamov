@@ -30,7 +30,8 @@
 @import "_features";
 @import "_slider";
 @import "_main";
-
+@import "_popup";
+@import "_forms";
 
 
 // COMMON SETTINGS______________________
@@ -42,8 +43,10 @@ body {
   .reg();
 }
 
-input button {
-  outline: none;
+input, button, textarea {
+  &:focus{
+    outline: none;
+  }
 }
 
 a:hover {

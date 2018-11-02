@@ -16,6 +16,7 @@
 
 <body>
 
+
   <main class="main">
     <div class="container">
       <!-- Header -->
@@ -33,7 +34,7 @@
           <div class="col-md-3 col-6">
             <div class="wrap">
               <div class="wrap-block">
-                <button class="button btn-header"><span>получить консультацию</span></button>
+                <button id="btn-consultation" class="button btn-header popup-btn"><span>получить консультацию</span></button>
               </div>
             </div>
 
@@ -59,7 +60,7 @@
 
           </div>
           <div class="offset-lg-2 col-lg-5 offset-md-2 col-md-8">
-            <form class="main-form">
+            <form class="main-form form">
               <h2>
                 Для расчёта точной стоимости <br>
                 закажите <strong>выезд замерщика</strong>
@@ -134,42 +135,35 @@
       </div>
     </div>
 
+
+
+    <div class="popup">
+      <div class="popup-window">
+        <button class="popup-close-btn"></button>
+        <div class="popup-content popup-form form">
+           <h4>Заинтересовало?</h4>
+          <p>Оставьте контактные данные<br>для связи</p>
+          <form action="#">
+            <label for="#popup-form-name">Ваше имя</label>
+            <input id="popup-form-name" type="text">
+            <label for="#popup-form-name">Номер телефона</label>
+            <input id="popup-form-phone" type="text">
+            <label for="#popup-form-message">Номер телефона</label>
+            <textarea id="popup-form-message" rows="5"></textarea>
+            <button class="button" type="submit">Оставьте заявку</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
   </section>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
   <script src="libs/slick-1.8.1/slick.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $(".feature-slider").slick({
-        slidesToShow: 4,
-        infinite: true,
-        dots: false,
-        responsive: [{
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              arrows: true,
-              prevArrow: '<button type="button" class="slick-prev slick-btn"></button>',
-              nextArrow: '<button type="button" class="slick-next slick-btn"></button>'
-            }
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: true,
-              prevArrow: '<button type="button" class="slick-prev slick-btn"></button>',
-              nextArrow: '<button type="button" class="slick-next slick-btn"></button>'
 
-            }
-          }
-        ]
-      });
-    });
-  </script>
+  <script src="js/scripts.js">  </script>
 </body>
 
 </html>

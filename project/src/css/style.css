@@ -140,42 +140,9 @@ section.features .feature-img-box img {
   font-size: 2.2rem;
   text-transform: uppercase;
 }
-.main-form {
-  padding: 5rem 4.5rem;
-  background-color: #ffffff;
-  text-align: center;
-}
-.main-form h2 {
-  margin-bottom: 4rem;
-  font-size: 1.8rem;
-}
 .main-form h2 strong {
   font-family: "Proxima Nova bold", sans-serif;
   font-size: 1.9rem;
-}
-.main-form input {
-  display: block;
-  height: 5rem;
-  width: 100%;
-  margin-bottom: 2.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid #dddddd;
-}
-.main-form label {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  padding: 0 1rem;
-  font-size: 1.3rem;
-  color: #565656;
-  background-color: #ffffff;
-}
-.main-form .button {
-  width: 100%;
-  font-size: 1.6rem;
-  height: 6.5rem;
 }
 .main-form small {
   display: inline-block;
@@ -273,13 +240,100 @@ section.features .feature-img-box img {
     font-size: 1.8rem;
   }
 }
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.popup-close-btn {
+  border: none;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 0rem;
+  right: -4rem;
+  background: url('../img/close.svg') no-repeat center;
+  background-size: contain;
+  background-color: transparent;
+  color: #ffffff;
+}
+.popup-window {
+  position: fixed;
+  width: 35rem;
+  top: 20rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.popup .popup-form {
+  padding: 3.4rem 5rem 5rem;
+}
+.popup .popup-form h4 {
+  font-family: "Proxima Nova bold", sans-serif;
+  margin-bottom: 0;
+  font-size: 1.8rem;
+}
+.popup .popup-form p {
+  font-size: 1.8rem;
+  margin-bottom: 4rem;
+}
+body.popup-opened {
+  overflow: hidden;
+}
+.form {
+  padding: 5rem 4.5rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+.form h2 {
+  margin-bottom: 4rem;
+  font-size: 1.8rem;
+}
+.form input,
+.form textarea {
+  display: block;
+  padding: 1rem;
+  height: 5rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dddddd;
+  font-size: 1.5rem;
+}
+.form textarea {
+  height: initial;
+}
+.form label {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  color: #565656;
+  background-color: #ffffff;
+}
+.form .button {
+  width: 100%;
+  font-size: 1.6rem;
+  height: 6.5rem;
+}
 html {
   font-size: 10px;
 }
 body {
   font-family: "Proxima Nova regular", sans-serif;
 }
-input button {
+input:focus,
+button:focus,
+textarea:focus {
   outline: none;
 }
 a:hover {
