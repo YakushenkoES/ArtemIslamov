@@ -1,0 +1,127 @@
+@import "_font.less";
+
+.font-face('Ubuntu bold', '../fonts/Ubuntu-Bold', bold, normal);
+.font-face('Ubuntu regular', '../fonts/Ubuntu-Regular', normal, normal);
+// * * COLORS
+@main-col: #0bbaf0;
+@light-col: #fff;
+@bg-col: #fafcfe;
+@brd-col: #dcdcdc;
+
+@hz-line-col: #c4c4c4;
+
+html {
+  font-size: 10px;
+}
+
+body {
+  .reg();
+}
+
+.bold() {
+  font-family: 'Ubuntu bold', sans-serif;
+  font-weight: bold;
+}
+
+.reg() {
+  font-family: 'Ubuntu regular', sans-serif;
+  font-weight: normal;
+}
+
+.interview {
+  width: 192rem;
+  height: 74rem;
+  margin: 0 auto;
+  padding: 7.4rem;
+
+  text-align: center;
+  background: @bg-col url("../img/background_pattern.png") repeat left top;
+
+  // * * Загловок
+  .header {
+    margin-bottom: 2.8rem;
+
+    .main-header {
+      font-size: 3.6rem;
+      line-height: 1;
+      margin-bottom: 1.4rem;
+      .bold();
+
+      text-transform: uppercase;
+      color: @main-col;
+    }
+
+    .sub-header {
+      margin-bottom: 2.2rem;
+      line-height: 1.5rem;
+
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      color: @main-col;
+    }
+
+    .hz-line {
+      margin: 0 auto;
+      height: 1px;
+      width: 12rem;
+      border-top: solid 1px @hz-line-col;
+    }
+  }
+
+}
+
+.accordion {
+  margin: 0 auto;
+  width: 86rem;
+
+  .card {
+    border: none;
+    background-color: transparent;
+    margin-bottom: 4px;
+
+    &-header {
+      background-color: @main-col;
+      z-index: 1;
+
+      .btn.btn-link {
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+        color: @light-col;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .collapse.show {
+      margin-bottom: -4px;
+    }
+
+    .collapse,
+    .collapsing {
+      @brd-rds: 10px;
+
+      margin: 0 0.6rem 0;
+      padding: 1rem 5rem 3.7rem 2.8rem;
+
+      border: solid 4px @brd-col;
+      border-top: none;
+      border-radius: @brd-rds;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      font-size: 2.2rem;
+      line-height: 2.5rem;
+
+      background-color: #fff;
+
+      .card-body {
+        padding: 0;
+        font-size: 2.2rem;
+        text-align: left;
+      }
+    }
+  }
+}

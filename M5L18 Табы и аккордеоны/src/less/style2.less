@@ -1,0 +1,185 @@
+@import "_font.less";
+.font-face('MyriadPro', '../fonts/MyriadPro-Regular', normal, normal);
+
+// * * Common
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'MyriadPro', sans-serif;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+@tab-heigt: 44.5rem; // Высота всего таб контрола
+
+@tab-brd-col: #047ca0;
+@tab-brd-inner-col: #7dd7f4;
+@light-col: #fff;
+@text-dark-col: #080707;
+@text-col-label: #6f6d6d;
+@input-bg: #1b1a1a;
+
+// Цвета градиента. Он делится на 3 части.
+@grad-col-1: #0494bf; // Нижний цвет. Цвет дна табконтрола
+@grad-col-2: #03a5db; // Среднйи цвет. Цвет верха рамки активного таба и дна вкладки табконтрола
+@grad-col-3: #03a6dc; // Верхний цвет. Цвет верха табконтрола.
+
+@error-col: #c51f03;
+
+// Настройка всей формы с фоном и т.д.
+.login-panel {
+  width: 80rem;
+  height: 50rem;
+  margin: 0 auto;
+  padding: 2rem 9rem 4rem 8rem;
+  background:
+    url('../img/bg_tab_shadow.png') no-repeat top left,
+    url('../img/bg_tab_dark.png') no-repeat top left,
+    url('../img/bg_tab_pattern.png') repeat top left;
+  background-size: cover, cover, auto;
+
+
+  // Контейнер с табконтролом___________________
+  .tab-container {
+    height: @tab-heigt;
+
+    .nav.nav-tabs {
+      height: 3.5rem;
+      margin: 0 3rem -1px; // Нужно, чтобы шапка с табами на содержание табов наезжала на толщину рамки (1px), тогда эффект, что все единое целое
+
+      border: none;
+
+      .nav-item .nav-link {
+
+        height: 3.5rem;
+        margin-right: 1rem;
+
+        border: none;
+        border-bottom: solid 1px @tab-brd-col;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+
+        color: @text-dark-col;
+        background-color: @light-col;
+        line-height: 0.917;
+        font-size: 2.4rem;
+
+        // АКТИВНЫЙ ТАБ
+        &.active {
+          padding-left: 2.5rem;
+          padding-right: 2.5rem;
+
+          background: linear-gradient(0deg, @grad-col-2, @grad-col-3);
+
+          border: solid 1px @tab-brd-col;
+          border-bottom: none;
+
+          color: @light-col;
+          text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
+        }
+      }
+
+    }
+
+    .tab-content {
+      height: calc(@tab-heigt - 3.5rem);
+      border-radius: 5px;
+      border: solid 1px @tab-brd-col;
+      background: linear-gradient(0deg, @grad-col-1, @grad-col-2);
+      padding: 1.5rem;
+
+      .tab-pane {
+        height: 100%;
+        border-radius: 5px;
+        border: solid 1px @tab-brd-inner-col;
+        background-color: #000000;
+      }
+
+
+      // Вкладка с формой
+      #enter {
+        .login-form {
+          position: relative;
+          padding: 4rem;
+          height: 100%;
+
+          &-input {
+            height: 6rem;
+            width: 100%;
+            padding: 2.4rem;
+            margin-top: 3rem;
+
+            border: none;
+
+            font-size: 2.4rem;
+            color: @light-col;
+            background-color: @input-bg;
+            box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.5) inset;
+
+            &::placeholder {
+              color: @light-col;
+            }
+          }
+
+          &-forgot-password {
+            margin: 2rem 0 6rem 2.5rem;
+
+            font-size: 1.5rem;
+            line-height: 1.467;
+            color: @error-col;
+          }
+
+          &-remember {
+            margin-left: 2.5rem;
+
+            span {
+              font-size: 1.7rem;
+              color: #fff;
+            }
+
+            &-input {
+              display: inline-block;
+              vertical-align: -2px;
+              height: 1.2rem;
+              width: 1.2rem;
+
+            }
+
+            &-label {
+              display: inline-block;
+              margin: 0;
+              margin-left: 1rem;
+              color: @text-col-label;
+              font-size: 1.5rem;
+              font-weight: 400;
+              line-height: 1.5rem;
+            }
+          }
+
+          &-button-submit {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 13rem;
+            height: 4rem;
+
+            transform: translateX(3rem) translateY(-1.5rem);
+            border: none;
+            color: @light-col;
+            font-size: 2.4rem;
+            line-height: 0.917;
+            background: radial-gradient(circle farthest-side at 50%, #cf2303 0%, #7f0501 100%);
+          }
+
+        }
+      }
+    }
+  }
+
+}
