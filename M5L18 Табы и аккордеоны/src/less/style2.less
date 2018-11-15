@@ -9,8 +9,13 @@ html {
 body {
   font-family: 'MyriadPro', sans-serif;
 }
+a{
+  &, &:hover{
+   
 
-input {
+  }
+}
+input, button {
   &:focus {
     outline: none;
   }
@@ -128,6 +133,7 @@ input {
           }
 
           &-forgot-password {
+            display: inline-block;
             margin: 2rem 0 5.3rem 3.2rem;
 
             font-size: 1.5rem;
@@ -163,6 +169,8 @@ input {
           }
 
           &-button-submit {
+            @btn-grad-1: #cf2303;
+            @btn-grad-2: #7f0501;
             position: absolute;
             right: 0;
             bottom: 0;
@@ -174,7 +182,10 @@ input {
             color: @light-col;
             font-size: 2.4rem;
             line-height: 0.917;
-            background: radial-gradient(circle farthest-side at 50%, #cf2303 0%, #7f0501 100%);
+            background: radial-gradient(circle farthest-side at 50%, @btn-grad-1 0%, @btn-grad-2 100%);
+            &:hover{
+              background: radial-gradient(circle farthest-side at 50%, lighten(@btn-grad-1, 20%) 0%, lighten(@btn-grad-2, 10%) 100%);
+            }
           }
 
         }
