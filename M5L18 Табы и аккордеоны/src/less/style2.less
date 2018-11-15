@@ -9,20 +9,15 @@ html {
 body {
   font-family: 'MyriadPro', sans-serif;
 }
-a{
-  &, &:hover{
-   
 
-  }
-}
 input, button {
   &:focus {
     outline: none;
   }
 }
 
-@tab-heigt: 44.5rem; // Высота всего таб контрола
-
+@tab-heigt: 44rem; // Высота всего таб контрола
+@tab-nav-heigt: 4rem; // Высота верхний табов
 @tab-brd-col: #047ca0;
 @tab-brd-inner-col: #7dd7f4;
 @light-col: #fff;
@@ -55,14 +50,15 @@ input, button {
     height: @tab-heigt;
 
     .nav.nav-tabs {
-      height: 3.5rem;
-      margin: 0 3rem -1px; // Нужно, чтобы шапка с табами на содержание табов наезжала на толщину рамки (1px), тогда эффект, что все единое целое
+      height: @tab-nav-heigt;
+      margin: 0 3rem -1.1px; // Нужно, чтобы шапка с табами на содержание табов наезжала на толщину рамки (1px), тогда эффект, что все единое целое
+      //0.1px чтобы не было лишней линии при зуме, вот такой баг округления наверно
 
       border: none;
 
       .nav-item .nav-link {
 
-        height: 3.5rem;
+        height: @tab-nav-heigt;
         margin-right: 1rem;
 
         border: none;
@@ -93,7 +89,7 @@ input, button {
     }
 
     .tab-content {
-      height: calc(@tab-heigt - 3.5rem);
+      height: calc(@tab-heigt - @tab-nav-heigt);
       border-radius: 5px;
       border: solid 1px @tab-brd-col;
       background: linear-gradient(0deg, @grad-col-1, @grad-col-2);
