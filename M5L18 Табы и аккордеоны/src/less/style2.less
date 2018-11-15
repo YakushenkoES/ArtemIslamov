@@ -58,7 +58,7 @@ button {
       border: none;
 
       .nav-item {
-
+        
         .nav-link {
           height: @tab-nav-heigt;
           margin-right: 1rem;
@@ -76,7 +76,7 @@ button {
 
           // АКТИВНЫЙ ТАБ
           &.active {
-            height: calc(@tab-nav-heigt + 0.1px);
+            height: @tab-nav-heigt;
 
             padding-left: 2.5rem;
             padding-right: 2.5rem;
@@ -88,6 +88,13 @@ button {
 
             color: @light-col;
             text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
+            &::after{
+              content: "";
+              display: block;
+              height: 4px;
+              background-color: @grad-col-2;
+              margin: calc(0.5rem - 1px) -2.5rem 0 -2.5rem;
+            }
           }
         }
 
