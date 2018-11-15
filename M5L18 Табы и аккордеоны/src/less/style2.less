@@ -10,14 +10,15 @@ body {
   font-family: 'MyriadPro', sans-serif;
 }
 
-input, button {
+input,
+button {
   &:focus {
     outline: none;
   }
 }
 
-@tab-heigt: 44rem; // Высота всего таб контрола
-@tab-nav-heigt: 4rem; // Высота верхний табов
+@tab-heigt: 44.5rem; // Высота всего таб контрола
+@tab-nav-heigt: 3.5rem; // Высота верхний табов
 @tab-brd-col: #047ca0;
 @tab-brd-inner-col: #7dd7f4;
 @light-col: #fff;
@@ -51,39 +52,44 @@ input, button {
 
     .nav.nav-tabs {
       height: @tab-nav-heigt;
-      margin: 0 3rem -1.1px; // Нужно, чтобы шапка с табами на содержание табов наезжала на толщину рамки (1px), тогда эффект, что все единое целое
+      margin: 0 3rem -1px; // Нужно, чтобы шапка с табами на содержание табов наезжала на толщину рамки (1px), тогда эффект, что все единое целое
       //0.1px чтобы не было лишней линии при зуме, вот такой баг округления наверно
 
       border: none;
 
-      .nav-item .nav-link {
+      .nav-item {
 
-        height: @tab-nav-heigt;
-        margin-right: 1rem;
+        .nav-link {
+          height: @tab-nav-heigt;
+          margin-right: 1rem;
 
-        border: none;
-        border-bottom: solid 1px @tab-brd-col;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
+          border: none;
+          border-bottom: solid 1px @tab-brd-col;
+          border-top-right-radius: 5px;
+          border-top-left-radius: 5px;
 
-        color: @text-dark-col;
-        background-color: @light-col;
-        line-height: 0.917;
-        font-size: 2.4rem;
+          color: @text-dark-col;
+          background-color: @light-col;
+          line-height: 0.917;
+          font-size: 2.4rem;
 
-        // АКТИВНЫЙ ТАБ
-        &.active {
-          padding-left: 2.5rem;
-          padding-right: 2.5rem;
+          // АКТИВНЫЙ ТАБ
+          &.active {
+            height: calc(@tab-nav-heigt + 0.1px);
 
-          background: linear-gradient(0deg, @grad-col-2, @grad-col-3);
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
 
-          border: solid 1px @tab-brd-col;
-          border-bottom: none;
+            background: linear-gradient(0deg, @grad-col-2, @grad-col-3);
 
-          color: @light-col;
-          text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
+            border: solid 1px @tab-brd-col;
+            border-bottom: none;
+
+            color: @light-col;
+            text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.75);
+          }
         }
+
       }
 
     }
@@ -179,7 +185,8 @@ input, button {
             font-size: 2.4rem;
             line-height: 0.917;
             background: radial-gradient(circle farthest-side at 50%, @btn-grad-1 0%, @btn-grad-2 100%);
-            &:hover{
+
+            &:hover {
               background: radial-gradient(circle farthest-side at 50%, lighten(@btn-grad-1, 20%) 0%, lighten(@btn-grad-2, 10%) 100%);
             }
           }
