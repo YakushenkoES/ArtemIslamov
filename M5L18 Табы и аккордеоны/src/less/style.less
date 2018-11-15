@@ -96,15 +96,20 @@ body {
     }
 
     .collapse.show {
-      margin-bottom: -4px;
+      //margin-bottom: -4px;
     }
 
-    .collapse,
-    .collapsing {
+    .card-body {
+      margin: 1rem 5rem 3.7rem 2.8rem;
+      padding: 0;
+      font-size: 2.2rem;
+      text-align: left;
+    }
+
+    .collapse, .collapsing {
       @brd-rds: 10px;
 
       margin: 0 0.6rem 0;
-      padding: 1rem 5rem 3.7rem 2.8rem;
 
       border: solid 4px @brd-col;
       border-top: none;
@@ -116,12 +121,8 @@ body {
       line-height: 2.5rem;
 
       background-color: #fff;
-
-      .card-body {
-        padding: 0;
-        font-size: 2.2rem;
-        text-align: left;
-      }
     }
+
+    
   }
 }
