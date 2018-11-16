@@ -1,0 +1,128 @@
+// * * секция с ценами__________________
+.price {
+  background: #358015 url('../img/price/bg-price.png') repeat;
+
+  // Заголовок секции_______
+  &-title {
+    margin-bottom: 3.5rem;
+    .bold();
+
+    font-size: 1.9rem;
+    line-height: 1.053;
+  }
+
+  //Обертка для выравнивания кнопки в заголоке секции
+  &-button-wrap {
+    .price-button-header {
+      width: 34rem;
+    }
+
+    text-align: right;
+  }
+
+  // Блок с ценами_____
+  &-block {
+    height: 100%; // всем блокам иметь одинаковую высоту в строке
+    padding: 3rem;
+    color: @text-clr-dark2;
+    background-color: @bg-clr-light;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  // Цена
+  &-tag {
+    margin-bottom: 3.5rem;
+
+    .bold();
+    font-size: 3rem;
+    line-height: 1.053;
+  }
+
+  // Перечень работ
+  &-list {
+    margin-bottom: 2.5rem;
+    min-height: 15rem;
+    padding-left: 0;
+    font-size: 1.8rem;
+    line-height: 1.667;
+
+    &-link {
+      @link-col: #006b00;
+      display: none;
+      color: @link-col;
+      font-size: 1.8rem;
+
+      &:hover {
+        color: lighten(@link-col, 10%);
+      }
+
+      text-decoration: underline;
+    }
+
+    li {
+      list-style-type: none;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        margin-right: 1rem;
+        width: 1.6rem;
+        height: 1.6rem;
+        background: url('../img/price/check.svg') center center no-repeat;
+        background-size: 100%;
+        //vertical-align: middle;
+      }
+    }
+  }
+
+  // Кнопки секции с ценами
+  &-button.button {
+    width: 20rem;
+
+    font-size: 1.8rem;
+    height: 6.5rem;
+  }
+
+
+}
+
+@media (max-width: 1199.98px) {
+  .price {
+    &-button-wrap {
+      .price-button-header {
+        width: 100%;
+      }
+
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+  }
+
+}
+
+@media (max-width: 991.98px) {
+  .price {
+    &-block {
+      height: auto; // Высоту блока снова сделатьт автоматичской, когда 1 блок в строке
+      margin-bottom: 2rem;
+    }
+
+    &-tag {
+      margin-bottom: 2rem;
+    }
+
+    &-list {
+      display: none;
+
+      &-link {
+        display: block;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

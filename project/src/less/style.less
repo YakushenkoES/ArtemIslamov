@@ -18,9 +18,10 @@
 
 
 @icon-clr: #70c849;
-@bg-clr-light: #fcfcfc;
+@bg-clr-light: #ffffff;
 @text-clr-ligth: #ffffff;
 @text-clr-dark: #292929;
+@text-clr-dark2: #1a1820;
 @brd-clr-gray: #dddddd;
 @label-clr: #565656;
 @form-bg-clr: #ffffff;
@@ -32,6 +33,7 @@
 @import "_main";
 @import "_popup";
 @import "_forms";
+@import "_price.less";
 
 
 // COMMON SETTINGS______________________
@@ -79,10 +81,22 @@ a:hover {
 section {
   text-align: center;
   padding-top: 10rem;
+  padding-bottom: 12rem;  
 
   .section-header {
-    font-size: 3.6rem;
-    .bold();
+    &-light{
+      color: @text-clr-ligth
+    }
+    &-title{
+       font-size: 3.6rem;
+      .bold();
+    }
+    &-subtitle{
+      margin-top: 5rem;
+      margin-bottom: 9rem;
+      font-size: 1.8rem;
+    }
+   
   }
 }
 
@@ -91,6 +105,20 @@ section {
 @media (max-width: 991.98px) {
   section {
     padding-top: 5rem;
+    padding-bottom: 3rem;
+
+    .section-header {
+     
+      &-title{
+        font-size: 2.4rem;
+      }
+      &-subtitle{
+        margin-top: 2.5rem;
+        margin-bottom: 3rem;
+        font-size: 1.8rem;
+      }
+     
+    }
   }
 }
 
