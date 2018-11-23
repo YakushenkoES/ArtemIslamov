@@ -178,16 +178,20 @@ button {
             }
           }
 
-          &-button-submit {
+          &-submit {
+            &-wrapper{
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              width: 13rem;
+              height: 4rem;
+              transform: translateX(3rem) translateY(-1.5rem);
+            }
+            
             @btn-grad-1: #cf2303;
             @btn-grad-2: #7f0501;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            width: 13rem;
-            height: 4rem;
-
-            transform: translateX(3rem) translateY(-1.5rem);
+            width: 100%;
+            height: 100%;
             border: none;
             color: @light-col;
             font-size: 2.4rem;
