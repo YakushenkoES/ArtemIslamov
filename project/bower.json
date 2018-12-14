@@ -1,0 +1,21 @@
+{
+  "name": "project",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Yakushenko Evgeniy <yakushenko.evgeny@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/YakushenkoES/ArtemIslamov",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  }
+}
