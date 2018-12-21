@@ -1,200 +1,208 @@
-section.feedback {
+.feedback {
 
   background-color: #ededed;
   background: url('../img/feedback/bg-feedback.png') left top repeat;
   color: @text-clr-dark2;
 
+  // Объект ремонта
+  &-object {
+    text-align: left;
+    font-size: 1.5rem;
 
-  .feedback {
-
-    // Объект ремонта
-    &-object {
-      text-align: left;
-      font-size: 1.5rem;
-
-      strong {
-        .bold();
-      }
-
-      margin-bottom: 5rem;
+    strong {
+      .bold();
     }
 
-    // Клиент
-    &-customer {
-      text-align: left;
+    margin-bottom: 5rem;
+  }
+
+  // Клиент
+  &-customer {
+    text-align: left;
 
 
-      &-photo,
-      &-info {
-        display: inline-block;
-        vertical-align: middle;
-      }
-
-      &-info h4 {
-        font-size: 1.4rem;
-        margin: 0;
-      }
-
-      &-photo {
-        margin-right: 2rem;
-
-        img {
-          border-radius: 50%;
-        }
-      }
-
-      &-name {
-        margin: 0;
-        font-size: 1.6rem;
-        .bold();
-      }
-
+    &-photo,
+    &-info {
+      display: inline-block;
+      vertical-align: middle;
     }
 
-    // Сам текст отзыва
-    &-text {
-      position: relative;
-      margin-top: 2rem;
-      padding: 2.5rem;
-      border: solid 2px @icon-clr;
-      font-size: 1.5rem;
-      line-height: 1.2;
+    &-info h4 {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    &-photo {
+      margin-right: 2rem;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    &-name {
+      margin: 0;
+      font-size: 1.6rem;
+      .bold();
+    }
+
+  }
+
+  // Сам текст отзыва
+  &-text {
+    position: relative;
+    margin-top: 2rem;
+    padding: 2.5rem;
+    border: solid 2px @icon-clr;
+    font-size: 1.5rem;
+    line-height: 1.2;
+
+    &::before {
+      content: '';
+      z-index: 0;
+      position: absolute;
+      top: calc(-1.5rem - 1px);
+      left: 4rem;
+      width: 2rem;
+      height: 1.5rem;
+      background-color: #fff;
+      transform: skewX(20deg) skewY(35deg) translateX(1.5px) translateY(2px);
+      transform-origin: 0 0;
+    }
+
+    .speech {
+      z-index: -1;
+      position: absolute;
+      top: calc(-1.5rem - 1px);
+      left: 4rem;
+      width: 2rem;
+      height: 1.5rem;
+      background-color: @icon-clr;
+      transform: skewX(20deg) skewY(35deg);
+      transform-origin: 0 0;
+
+    }
+  }
+
+  // Слайдер блоков с отзывами
+  &-slider {
+    position: relative;
+    margin: 10rem 5rem 0 5rem;
+
+    &-item {
+      padding: 1rem;
+    }
+
+
+    padding: 3rem;
+    background-color: #ffffff;
+    box-shadow: 6px 10px 18px 0px rgba(0, 0, 0, 0.11);
+
+    .slick-slide {
+      outline: none;
+    }
+
+    @btn-width: 5rem;
+
+    .slick-btn {
+      position: absolute;
+      width: @btn-width;
+      height: 6rem;
 
       &::before {
-        content: '';
-        z-index: 0;
-        position: absolute;
-        top: calc(-1.5rem - 1px);
-        left: 4rem;
-        width: 2rem;
-        height: 1.5rem;
-        background-color: #fff;
-        transform: skewX(20deg) skewY(35deg) translateX(1.5px) translateY(2px);
-        transform-origin: 0 0;
+        content: "";
       }
 
-      .speech {
-        z-index: -1;
-        position: absolute;
-        top: calc(-1.5rem - 1px);
-        left: 4rem;
-        width: 2rem;
-        height: 1.5rem;
-        background-color: @icon-clr;
-        transform: skewX(20deg) skewY(35deg);
-        transform-origin: 0 0;
-
+      &.slick-prev {
+        left: -@btn-width;
+        background: @icon-clr url('../img/feedback/Prev.svg') center no-repeat;
+        background-size: 1.3rem;
       }
+
+      &.slick-next {
+        right: -@btn-width;
+        background: @icon-clr url('../img/feedback/Next.svg') center no-repeat;
+        background-size: 1.3rem;
+      }
+    }
+
+
+  }
+
+  // Форма обратной связи
+  &-form {
+    background: @bg-clr-light;
+    position: relative;
+    margin: 6rem auto 0rem auto;
+    padding: 5rem 5rem;
+    text-align: center;
+
+    small {
+      display: none;
+
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+
+    h3 {
+      margin-bottom: 0;
+      .bold();
+      font-size: 2.2rem;
+    }
+
+    button.button {
+      margin-top: 3rem;
+      width: 26rem;
+    }
+  }
+
+  // Картинка руки
+  &-bg-hand {
+    position: absolute;
+    bottom: 0rem;
+    left: -40rem;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .feedback {
+    &-form {
+      padding: 5rem 2rem;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .feedback {
+    &-form {
+      small {
+        display: block;
+      }
+    }
+
+    &-bg-hand {
+
+      display: none;
+
     }
 
     // Слайдер блоков с отзывами
     &-slider {
-      position: relative;
-      margin: 10rem 5rem 0 5rem;
-
-      &-item {
-        padding: 1rem;
-      }
-
-
-      padding: 3rem;
-      background-color: #ffffff;
-      box-shadow: 6px 10px 18px 0px rgba(0, 0, 0, 0.11);
-
-      .slick-slide {
-        outline: none;
-      }
-
-      @btn-width: 5rem;
+      margin: 2rem 1rem 0 1rem;
 
       .slick-btn {
-        position: absolute;
-        width: @btn-width;
-        height: 6rem;
-
-        &::before {
-          content: "";
-        }
+        @btn-width: 5rem;
 
         &.slick-prev {
-          left: -@btn-width;
-          background: @icon-clr url('../img/feedback/Prev.svg') center no-repeat;
-          background-size: 1.3rem;
+          left: -@btn-width/2;
         }
 
         &.slick-next {
-          right: -@btn-width;
-          background: @icon-clr url('../img/feedback/Next.svg') center no-repeat;
-          background-size: 1.3rem;
+          right: -@btn-width/2;
         }
       }
-
-
-    }
-
-    // Форма обратной связи
-    &-form {
-      background: @bg-clr-light;
-      position: relative;
-      margin: 6rem auto 0rem auto;
-      padding: 5rem 5rem;
-      text-align: center;
-
-      @media (max-width: 1199.98px) {
-        padding: 5rem 2rem;
-      }
-
-      h3 {
-        margin-bottom: 0;
-        .bold();
-        font-size: 2.2rem;
-      }
-
-      button.button {
-        margin-top: 3rem;
-        width: 26rem;
-      }
-    }
-
-    // Картинка руки
-    &-bg-hand {
-      position: absolute;
-      bottom: 0rem;
-      left: -40rem;
-
-      @media (max-width: 991.98px) {
-        display: none;
-      }
-    }
-  }
-
-}
-
-
-
-@media (max-width: 991.98px) {
-  section.feedback {
-    .feedback {
-
-      // Слайдер блоков с отзывами
-      &-slider {
-        margin: 2rem 1rem 0 1rem;
-
-        .slick-btn {
-          @btn-width: 5rem;
-
-          &.slick-prev {
-            left: -@btn-width/2;
-          }
-
-          &.slick-next {
-            right: -@btn-width/2;
-          }
-        }
-
-
-      }
-
 
     }
 
@@ -202,14 +210,28 @@ section.feedback {
 }
 
 @media (max-width: 767.98px) {
-  section.feedback {
-    .feedback {
-      &-form {
+  .feedback {
 
-        button.button {
-          width: 100%;
-        }
+    button.button {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 4rem;
+    }
+
+    &-form {
+      margin: 3rem auto 0;
+      padding: 2rem 2rem;
+
+      h3 {
+        margin: 1.5rem 0;
+      }
+
+      form.form {
+        padding: 1rem;
       }
     }
   }
+
+
+
 }
