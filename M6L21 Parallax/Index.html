@@ -33,12 +33,12 @@
 <body>
     <style>
 
-        .temp{
+        .xtemp{
             height: 500px;
             margin-bottom: 50px;
         }
             </style>
-    <div class="temp">X</div>
+    <div class="temp"></div>
     <!-- ******HEADER****** -->
     <header id="header" class="header">
         <div class="container">
@@ -610,61 +610,53 @@
             });
         </script>
         <script>
-            fff(document.querySelector("#hero .hero-carousel .carousel-inner .item.active"));
-            $('body').on('slide.bs.carousel', function (e) {
-                fff(e.relatedTarget);
+            // Create parallax for active slide
+            updateCarouselParallax(document.querySelector("#hero .hero-carousel .carousel-inner .item.active"));
+
+            // Update parallax on active slide when user changed it
+            $('body').on('slid.bs.carousel', function (e) {
+                updateCarouselParallax(e.relatedTarget);
             });
 
-            function fff(el) {
-                var clStart = "item-";
-                var className = el.className.split(/\s+/).find(sClass => {
-                    return sClass.match(`^${clStart}`)
-                });
-                var index = Number(className.replace(clStart, ""));
-                if (!isNaN(index)) {
-                    console.log(index);
-                    $('.temp').parallax('destroy');
-                    $('.temp').parallax({
-                        imageSrc: `assets/images/hero-${index}.jpg`
-                    });
-
-                }
-            }
-
-
-
-            updateCarouselParallax(document.querySelector("#hero .hero-carousel .carousel-inner .item.active"));
-            $('body').on('slid.bs.carousel', function (e) {
-                    updateCarouselParallax(e.relatedTarget);
-                }
-
-            );
-
             function updateCarouselParallax(el) {
+
+                // Common part of slide unique class name ('item-1', 'item-2', etc.)
                 var clStart = "item-";
 
+                // Get class list using jquery and try to find uniqe slide name
                 var className = el.className.split(/\s+/).find(sClass => {
                     return sClass.match(`^${clStart}`)
                 });
+
+                // Extract slide index from unique class name (remove common part)
                 var index = Number(className.replace(clStart, ""));
                 if (!isNaN(index)) {
-                    console.log(index);
-                    el.setAttribute('data-image-src', `assets/images/hero-${index}.jpg`);
 
-                    var els = document.querySelectorAll("#hero .hero-carousel .carousel-inner .item");
-                    console.log(els);
+                    // If everythig is OK
+                    // find selected new active slide by index, add parallax to it and remove parallax from other slides
+                    var els = document.querySelectorAll("#hero .hero-carousel .carousel-inner .item"); // Bootstrap carousel slides
                     els.forEach((elem, ind) => {
-                        console.log(elem);
-                        //
-                        if (ind + 1 == index) {
+                        if (ind + 1 == index) { // + 1 due indexing from 0
+                            // Active slide 
                             $(elem).parallax({
-                                imageSrc: `assets/images/hero-${index.toString()}.jpg`
+                                imageSrc: `assets/images/hero-${index.toString()}.jpg`, // Set image by index
+                                androidFix: true // Static image to android devices (other mode doesn;t work correctly)
                             });
                         } else {
-                            $(elem).parallax('destroy');
+                            // Other slides
+                            try {
+                                // Try to remove parallax
+                                if ($(elem).data('px.parallax') != undefined && $(elem).data('px.parallax').$mirror !=
+                                    undefined) {
+                                    $(elem).parallax('destroy'); // 'destroy' parametr is undocumented (only in next versioan of parallax js). 
+                                }
+                            } catch (exception) {
+                                console.log(exception);
+                            }
                         }
                     });
                 }
+                //jQuery(window).trigger('resize').trigger('scroll');
             };
         </script>
 </body>
