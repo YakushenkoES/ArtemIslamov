@@ -1,0 +1,67 @@
+.inclusive{
+  
+  @bg-color-gray: #f5f5f5;
+  background-color: @bg-color-gray;
+  @item-bg-grad: linear-gradient(to top, #358015 0%, #36940d 100%);
+  .section-header-title{
+    color: @icon-clr;
+    font-size: 5rem;
+    margin-top: 0;
+  }
+  .section-header-subtitle{
+    font-size: 1.6rem;
+  }
+
+
+  &-item{
+    height: 10rem;
+    text-align: left;
+    
+    // Номер пункта
+    &-no{
+      display: inline-block;
+      vertical-align: top;
+      width: 5rem;
+      height: 5rem;
+      padding: 2px;
+
+      border: solid 2px @icon-clr;
+      border-radius: 50%;
+
+      .bold();
+      color:@text-clr-ligth;
+      font-size: 2rem;
+      text-align: center;
+      span{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        background: @item-bg-grad;
+        border-radius: 50%;
+        line-height: 4rem;
+      }
+    }
+
+    // Содержание пункта
+    &-content{
+      max-width: calc(100% - 8rem);
+      margin-left: 1.8rem;
+      margin-top: 1.5rem;
+
+      display: inline-block;
+      text-align: left;
+      h4{
+        margin: 0;
+        padding: 0;
+        font-size: 1.6rem;
+        .bold();
+      }
+      .incl-item-text{
+        font-size: 1.3rem;
+        
+      }
+    }
+  }
+
+}
