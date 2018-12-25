@@ -1,0 +1,151 @@
+// Fonts_________________________
+.font-face(@font-family, @filepath, @font-weight, @font-style){
+  @font-face {
+      font-family: @font-family;
+      src: url('@{filepath}.eot');
+      src: url('@{filepath}.eot?#iefix') format('embedded-opentype'),
+          url('@{filepath}.woff2') format('woff2'),
+          url('@{filepath}.woff') format('woff'),
+          url('@{filepath}.ttf')  format('truetype'),
+          url('@{filepath}.svg#svgFontName') format('svg');
+      font-weight:@font-weight;
+      font-style:@font-style;
+  }
+}
+.font-face('OpenSans','../fonts/OpenSans-Regular', normal, normal);
+.font-face('OpenSans','../fonts/OpenSans-SemiBold', 600, normal);
+.semiBold(){
+  font-weight: 600;
+}
+
+@clr-text-dark: #000000;
+@clr-text-dark-lighter: #666666;
+@clr-text-light: #ffffff;
+@clr-bg-light:#e8e8e8;
+@clr-bg-red:#c60b0b;
+// Body_____________________________
+a{
+  text-decoration: none;
+  color: @clr-text-dark;
+}
+address{
+  font-style: normal;
+}
+html{
+  font-size: 10px;
+  background: gray;
+}
+html *{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'OpenSans', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// Map section_______________________________
+.map-section{
+  margin:0 auto;
+  width: 192rem;
+  background-color: #fff;
+  .map{
+
+    // Блок для карты с контактами____________________
+    &-container{
+    position: relative;
+    height: 43rem;
+    background-color: @clr-bg-light;
+
+    // сама карта_____
+    #map{
+      width: 100%;
+      height: 100%;
+    }
+
+    // Контакты красный блок__________________________
+    .contacts{
+      
+      position: absolute;
+      left: 49rem;
+      top: 0;
+      height: 100%;
+      //width: 38rem;
+
+      text-align: center;
+      padding: 7rem;
+      color: @clr-text-light;
+      background-color: @clr-bg-red;
+
+      &-header{
+        margin: 0;
+        margin-bottom: 3.5rem;
+        line-height: 34px;
+
+        font-size: 3rem;
+        font-weight: normal; 
+      }
+      .address, .distance, .phone, .mail{
+        display: block;
+        margin: 0;
+        margin-bottom: 3.5rem;
+        color: @clr-text-light;
+        font-size: 1.8rem;
+        line-height: 18px;
+      }
+      .mail{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Блок информации под картами___________
+  &-caption{
+    display: flex;
+    width: 94rem;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 2rem auto 1.5rem;
+    // Логотип
+    .logo{
+      text-align-last: left;
+      img{
+        display: inline-block;
+        margin-right: 2rem;
+      }
+      &-text{
+        display: inline-block;
+        vertical-align:top;
+        font-size: 1.6rem;
+      }
+    }
+
+    // Описание
+    .description{
+      text-align: center;
+      align-self: center;
+      font-size: 1.4rem;
+      color: @clr-text-dark-lighter;
+    }
+
+    // Адрес
+    .addres-block{
+      text-align: right;
+      .phone{
+        .semiBold();
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+      }
+      .address{
+        font-style: normal;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+      }
+    }
+    
+  }
+  }
+  
+}
