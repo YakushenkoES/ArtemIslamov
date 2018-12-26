@@ -5,6 +5,8 @@ const autoprefixer = require("gulp-autoprefixer");
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const del = require('del');
+const clean_css = require('gulp-clean-css');
+var rename = require("gulp-rename");
 
 const outDir = './dist';
 const paths = {
@@ -38,12 +40,24 @@ function reload(done){
 // LESS_______________________________________
 function less(){
    return gulp.src([paths.less, '!**/_*.less'])
-  .pipe(sourcemaps.init())
+  //.pipe(sourcemaps.init())
   .pipe(lessGulp())
   .pipe(autoprefixer(['> 0.1%'], { cascade: true, grid: true }))
-  .pipe(sourcemaps.write('./maps'))
+ // .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest(paths.cssDir))
   .pipe(browserSync.stream());
+}
+
+// Clean CSS____________
+function cleanCSS(){
+  return gulp.src('src/css/style.css')
+  .pipe(sourcemaps.init())
+    .pipe(clean_css({level:2}))
+    .pipe(rename({
+      extname: ".min.css"}))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.cssDir))
+    .pipe(browserSync.stream());
 }
 
 
@@ -51,7 +65,7 @@ function less(){
 function watchFiles(){
   gulp.watch(paths.html, reload);
   gulp.watch(paths.js, reload);
-  gulp.watch(paths.less, less);
+  gulp.watch(paths.less, series(less, cleanCSS));
 };
 const watch = series(less, initBrowserSync, watchFiles);
 
@@ -69,7 +83,7 @@ function buildProject(done){
   .pipe(gulp.dest(outDir));
 
   // CSS
-  gulp.src(paths.css)
+  gulp.src([paths.css, '!src/css/style.css'])
   .pipe(gulp.dest(outDir + '/css'));
 
   // JS
@@ -90,7 +104,7 @@ function buildProject(done){
 
   done();
 }
-const build = series(clean, less, buildProject);
+const build = series(clean, less, cleanCSS, buildProject);
 
 
 exports.default = watch;

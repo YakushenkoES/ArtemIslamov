@@ -1026,6 +1026,99 @@ body.popup-opened {
 .inclusive-item-content .incl-item-text {
   font-size: 1.3rem;
 }
+.problems {
+  position: relative;
+  padding-top: 12rem;
+  padding-bottom: 10rem;
+}
+.problems .section-header-title {
+  margin-top: 0;
+  margin-bottom: 8.5rem;
+  line-height: 36px;
+}
+.problems-list {
+  padding: 5rem;
+  border-width: 4px;
+  border-style: solid;
+  margin-bottom: 2.5rem;
+  height: 45rem;
+  position: relative;
+}
+.problems-list h3 {
+  font-family: "Proxima Nova bold", sans-serif;
+  margin: 0;
+  margin-bottom: 5rem;
+  text-align: left;
+  font-size: 2.1rem;
+  line-height: 1.8rem;
+  color: #313131;
+}
+.problems-list ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: calc(100% - 6.8rem);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  list-style-type: none;
+}
+.problems-list ul li {
+  position: relative;
+  font-size: 1.6rem;
+  padding-left: 4.5rem;
+}
+.problems-list ul li::before {
+  content: '';
+  background-size: 100%;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+}
+.problems-list_bad {
+  border-color: rgba(49, 49, 49, 0.5);
+}
+.problems-list_bad h3 {
+  opacity: 0.5;
+}
+.problems-list_bad ul li::before {
+  background: url('../img/problems/no.png') center no-repeat;
+}
+.problems-list_good {
+  border-color: #49be15;
+}
+.problems-list_good ul li::before {
+  background: url('../img/problems/yes.png') center no-repeat;
+}
+.problems-woman {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translateX(-18rem);
+      -ms-transform: translateX(-18rem);
+          transform: translateX(-18rem);
+}
+@media (max-width: 991.98px) {
+  .problems-woman {
+    display: none;
+  }
+  .problems-list {
+    height: auto;
+    padding-bottom: 2rem;
+  }
+  .problems-list ul li {
+    margin-bottom: 3rem;
+  }
+}
 html {
   font-size: 10px;
 }
@@ -1091,5 +1184,3 @@ section .section-header-subtitle {
     font-size: 1.8rem;
   }
 }
-
-/*# sourceMappingURL=maps/style.css.map */
