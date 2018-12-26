@@ -757,6 +757,7 @@ body.popup-opened {
   }
 }
 .feedback {
+  padding-bottom: 10rem;
   background-color: #ededed;
   background: url('../img/feedback/bg-feedback.png') left top repeat;
   color: #1a1820;
@@ -880,13 +881,15 @@ body.popup-opened {
   font-family: "Proxima Nova bold", sans-serif;
   font-size: 2.2rem;
 }
+.feedback-form input {
+  margin-bottom: 3rem;
+}
 .feedback-form button.button {
-  margin-top: 3rem;
   width: 26rem;
 }
 .feedback-bg-hand {
   position: absolute;
-  bottom: 0rem;
+  bottom: -10rem;
   left: -40rem;
 }
 @media (max-width: 1199.98px) {
@@ -929,8 +932,9 @@ body.popup-opened {
   }
 }
 .scheme {
+  padding-bottom: 10rem;
   color: #1a1820;
-  background: url("../img/scheme/bg-hand.jpg") bottom -10rem right no-repeat;
+  background: url("../img/scheme/bg-hand.jpg") bottom -15rem right no-repeat;
 }
 .scheme-item {
   text-align: left;
@@ -949,7 +953,7 @@ body.popup-opened {
 }
 @media (max-width: 1600.98px) {
   .scheme {
-    background-position: bottom -10rem right -30rem;
+    background-position: bottom -15rem right -30rem;
   }
 }
 @media (max-width: 991.98px) {
