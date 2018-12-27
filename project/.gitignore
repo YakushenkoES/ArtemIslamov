@@ -2,7 +2,7 @@
 # Dependency directories
 src/libs
 dist
-
+*.map
 
 # Created by https://www.gitignore.io/api/node,bower,windows,visualstudiocode
 
